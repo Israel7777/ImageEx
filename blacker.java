@@ -16,6 +16,8 @@ public class blacker {
     public static void main(String[] args) {
         BufferedImage bufferedImage = null;
         File file = null;
+        int whiteCount=0;
+        int BlackCount=0;
 
         //read the image first
         try {
@@ -40,6 +42,18 @@ public class blacker {
                 int g = (p>>8)&0xff;
                 int b = p&0xff;
 
+
+              /*
+                if(r==255 & g==255 & b==255){
+
+                    whiteCount++;
+                    //p =255;
+                }else{
+                    BlackCount++;
+                    p =0&0xff;
+                }
+
+             */
                 //calculate the average
 
                 int average = ( r+g+b) /3;
@@ -56,6 +70,7 @@ public class blacker {
             file = new File("C:\\Users\\ISRAEL\\Desktop\\bw.png");
             ImageIO.write(bufferedImage,"png",file);
 
+            System.out.println("Finished writing and Found "+whiteCount+" whites and "+ BlackCount + " Blacks");
         }catch (IOException e){
             System.out.println("Error "+ e);
         }
