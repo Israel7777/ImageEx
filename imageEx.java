@@ -27,7 +27,7 @@ public class imageEx {
 
 
         try {
-            file = new File("C:\\image2.jpg" );
+            file = new File("C:\\Users\\ISRAEL\\Desktop\\image2.jpg" );
             ImageIO.write(bufferedImage,"jpg",file);
             System.out.println("writing Complete");
 
